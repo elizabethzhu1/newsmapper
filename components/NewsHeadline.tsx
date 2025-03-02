@@ -54,7 +54,7 @@ const NewsHeadline: React.FC<NewsHeadlineProps> = ({ news, onClose, position }) 
       
       setPopupPos({ x, y });
     }
-  }, [position, popupRef.current]);
+  }, [position]);
 
   return (
     <div 
@@ -83,7 +83,7 @@ const NewsHeadline: React.FC<NewsHeadlineProps> = ({ news, onClose, position }) 
           <div className="max-h-64 overflow-y-auto">
             <h3 className="font-semibold text-sm mb-2 text-gray-400">Articles about {news.location}:</h3>
             <ul className="space-y-2">
-              {news.clusterArticles.map((article, index) => (
+              {news.clusterArticles?.map((article, index) => (
                 <li 
                   key={index}
                   className="border border-gray-700 rounded p-2 hover:bg-gray-700 cursor-pointer transition"
